@@ -1,0 +1,26 @@
+{
+  "name": "academic-website",
+  "version": "1.0.0",
+  "description": "My personal academic website built with Vue.js and Bootstrap.",
+  "main": "src/main.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "bootstrap": "^5.1.0",
+    "leaflet": "^1.9.4",
+    "vue": "^3.2.0",
+    "vue-analytics": "^5.22.1",
+    "vue-gtag": "^3.5.2",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.0",
+    "@vue/compiler-sfc": "^3.2.0"
+  },
+  "author": "Guoxi Liu",
+  "license": "MIT"
+}

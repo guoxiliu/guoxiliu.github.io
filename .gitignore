@@ -1,0 +1,50 @@
+# Node modules
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Build output
+dist/
+build/
+*.local
+
+# Production
+.env.production
+.env.local
+.env.*.local
+
+# Misc
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# VSCode
+.vscode/
+
+# Vue.js
+*.log
+*.tsbuildinfo
+coverage/
+public/
+!.env.example
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# IDEs and editors
+.idea/
+*.swp
+*.swo
+
+# Mac system files
+Thumbs.db
