@@ -32,7 +32,6 @@ build/
 *.log
 *.tsbuildinfo
 coverage/
-public/
 !.env.example
 
 # Optional npm cache directory

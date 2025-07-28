@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Newsreader';
-  src: url('./fonts/Newsreader-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: 'NotoSans';
+  src: url('./fonts/NotoSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 1 999; /* variable font weight range */
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Newsreader';
-  src: url('./fonts/Newsreader-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: 'NotoSans';
+  src: url('./fonts/NotoSans-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 1 999;
   font-style: italic;
   font-display: swap;
@@ -21,7 +21,13 @@
 }
 
 body {
-  font-family: 'Newsreader', 'NotoSerifSC', serif;
+  font-family: 'NotoSans', 'Newsreader', 'NotoSerifSC', serif;
+  font-size: 16px;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #212529;
+  color: #fff;
 }
 
 .blur-on-hover {
@@ -54,7 +60,7 @@ body {
 }
 .zoom-fade-enter-from, .zoom-fade-leave-to {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.75);
 }
 
 .flip-fade-enter-active, .flip-fade-leave-active {
@@ -64,4 +70,15 @@ body {
 .flip-fade-enter-from, .flip-fade-leave-to {
   opacity: 0;
   transform: rotateY(90deg);
+}
+
+.school-link-text {
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.school-link-img {
+  height: 20px;
+  margin-right: 2px;
+  vertical-align: bottom;
 }

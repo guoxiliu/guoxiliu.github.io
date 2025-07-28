@@ -3,9 +3,36 @@ import { globalState } from '@/globalState';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      languageContent: {
+        en: {
+          brand: 'Guoxi <strong>LIU</strong>',
+          home: 'Home',
+          publications: 'Publications',
+          trajectory: 'Trajectory',
+          switchLanguage: 'Languages',
+          chinese: '中文🇨🇳',
+          english: 'English🇺🇸',
+        },
+        zh: {
+          brand: '<strong>刘</strong>国玺',
+          home: '主页',
+          publications: '出版物',
+          trajectory: '行踪轨迹',
+          switchLanguage: '切换语言',
+          chinese: '中文🇨🇳',
+          english: 'English🇺🇸',
+        }
+      }
+    }
+  },
   computed: {
     language() {
       return globalState.language;
+    },
+    lang() {
+      return this.languageContent[this.language];
     }
   },
   methods: {
@@ -27,12 +54,7 @@ export default {
             class="navbar-brand ms-3"
             href="/"
           >
-            <template v-if="language === 'en'">
-              Guoxi <strong>LIU</strong>
-            </template>
-            <template v-else>
-              <strong>刘</strong>国玺
-            </template>
+            <span v-html="lang.brand"></span>
           </a>
         </transition>
         <button
@@ -50,27 +72,35 @@ export default {
           <transition name="zoom-fade" mode="out-in">
             <ul class="navbar-nav ms-auto" :key="language">
               <li class="nav-item">
-                <router-link v-show="language === 'en'" class="nav-link" to="/">Home</router-link>
-                <router-link v-show="language === 'zh'" class="nav-link" to="/">主页</router-link>
+                <router-link class="nav-link" to="/">{{ lang.home }}</router-link>
               </li>
               <li class="nav-item">
-                <router-link v-show="language === 'en'" class="nav-link" to="/publications">Publications</router-link>
-                <router-link v-show="language === 'zh'" class="nav-link" to="/publications">出版物</router-link>
+                <router-link class="nav-link" to="/publications">{{ lang.publications }}</router-link>
               </li>
               <li class="nav-item">
-                <router-link v-show="language === 'en'" class="nav-link" to="/trajectory">Trajectory</router-link>
-                <router-link v-show="language === 'zh'" class="nav-link" to="/trajectory">行踪轨迹</router-link>
+                <router-link class="nav-link" to="/trajectory">{{ lang.trajectory }}</router-link>
               </li>
               <li class="nav-item dropdown me-3">
-                <a v-show="language === 'en'" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Language
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ lang.switchLanguage }}
                 </a>
-                <a v-show="language === 'zh'" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  切换语言
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#" @click="setLanguage('zh')">中文🇨🇳</a></li>
-                  <li><a class="dropdown-item" href="#" @click="setLanguage('en')">English🇺🇸</a></li>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click="setLanguage('zh')"
+                      :class="{ active: language === 'zh' }"
+                    >{{ lang.chinese }}</a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      @click="setLanguage('en')"
+                      :class="{ active: language === 'en' }"
+                    >{{ lang.english }}</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -79,9 +109,11 @@ export default {
       </div>
     </nav>
 
-    <transition name="zoom-fade" mode="out-in">
-      <router-view :key="language" />
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="zoom-fade" mode="out-in">
+        <component :is="Component" :key="language" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
