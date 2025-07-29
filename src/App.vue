@@ -84,7 +84,10 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div
+    id="app"
+    style="min-height:100vh;display:flex;flex-direction:column;"
+  >
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
       <div class="container-fluid">
@@ -156,7 +159,10 @@ export default {
     </router-view>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-light border-top">
+    <footer
+      class="footer mt-auto py-3 bg-light border-top"
+      style="margin-top:auto;"
+    >
       <div class="container text-center small text-muted">
         <span v-html="lang.footer"></span>
       </div>

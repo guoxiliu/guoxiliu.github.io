@@ -89,7 +89,7 @@ export default {
             },
             {
               date: "April 28, 2022",
-              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted to <a href="" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
+              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted to <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
             },
             {
               date: "January 26, 2022",
@@ -192,7 +192,7 @@ export default {
             },
             {
               date: "2022年04月28日",
-              text: `我们的论文 <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>《拓扑映射：对持续同调进行交互式分析的网络工具》已被 <a href="" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>（工业与应用数学学会国际数据挖掘大会——拓扑数据分析研讨会）录用。祝贺雪怡！`,
+              text: `我们的论文 <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>《拓扑映射：对持续同调进行交互式分析的网络工具》已被 <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>（工业与应用数学学会国际数据挖掘大会——拓扑数据分析研讨会）录用。祝贺雪怡！`,
             },
             {
               date: "2022年01月26日",
@@ -212,7 +212,7 @@ export default {
             },
             {
               date: "2021年07月16日",
-              text: `我们在 <a href="https://gt-rl.github.io/2021/challenge.html" target="_blank"><i>ICLR Computational Geometry & Topology Challenge 2021</i></a>（ICLR几何与拓扑表示学习研讨会）提交的项目被收录进最终的白皮书。<a href="https://arxiv.org/abs/2108.09810" target="_blank">点击此链接</a>获取详细信息。虽然未能进入前三名，但整个参赛过程非常有趣，感谢主办方营造了如此富有创意和包容性的环境。`
+              text: `我们在 <a href="https://gt-rl.github.io/2021/challenge.html" target="_blank"><i>ICLR Computational Geometry & Topology Challenge 2021</i></a>（ICLR几何与拓扑表示学习研讨会）提交的项目被收录进最终的白皮书。<a href="https://arxiv.org/abs/2108.09810" target="_blank">点击此链接</a>获取详细信息。虽然未能进入前三名，但整个参赛过程非常有趣。感谢主办方营造了如此富有创意和包容性的环境！`
             },
             {
               date: "2018年08月25日",
@@ -378,7 +378,7 @@ export default {
           <div class="card-header">
             <p class="fs-3 my-1 px-2">{{ lang.newsLabel }}</p>
           </div>
-          <div class="card-body mb-0 pb-1" style="max-height: 600px; overflow-y: auto;">
+          <div class="card-body mb-0 pb-1" style="max-height: 650px; overflow-y: auto;">
             <table class="table pb-0 mb-0">
               <!-- <colgroup>
                 <col style="min-width: 120px; width: 140px; max-width: 200px;">
