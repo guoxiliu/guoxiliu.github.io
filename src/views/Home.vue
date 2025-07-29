@@ -10,6 +10,8 @@ export default {
       protectedEmail: "[my protected email]",
       showEmail: false,
       viewerCount: null,
+      showOverlay: false,
+      overlayImgSrc: null, // <-- add this line
       languageContent: {
         en: {
           name: "Guoxi Liu",
@@ -55,19 +57,27 @@ export default {
           news: [
             {
               date: "2025-07-27",
-              text: `Our paper, "<i>GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</i>", has been accepted to <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. See you in Vienna, Austria this November!`
+              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted to <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
             },
             {
               date: "2025-03-07",
-              text: "I have successfully defended my dissertation, “<a href='https://open.clemson.edu/all_dissertations/3872/' target='_blank' style='color:#F56600'><i>Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures</i></a>”! Special thanks to my advisory committee and everyone who has supported me throughout this journey.",
+              textBefore: "I have successfully defended my Ph.D. dissertation, <a href='https://open.clemson.edu/all_dissertations/3872/' target='_blank' style='color:#F56600'><i>Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures</i></a>. Special thanks to my advisory committee and everyone who has supported me ",
+              linkText: "throughout this journey",
+              img: require('@/assets/imgs/news/PhD-banquet.jpg'),
+              linkColor: "#F56600",
+              textAfter: ".",
             },
             {
               date: "2024-10-15",
-              text: `Our paper submitted to <i>IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)</i> at <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> has been selected for the <strong>Best Paper Award</strong>. Congratulations to Yuehui! I feel very honored to be part of the team and contribute to the work.`,
+              textBefore: `Our paper submitted to <i>IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)</i> at <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> has been selected for the `,
+              linkText: "<strong>Best Paper Award<strong>",
+              img: require('@/assets/imgs/news/TopoInVis-2024-best-paper-award.jpg'),
+              linkColor: "#52B9F5",
+              textAfter: ". Congratulations to Yuehui! I feel very honored to be part of the team and contribute to the work.",
             },
             {
               date: "2024-07-15",
-              text: "I have been selected for Doctoral Dissertation Completion Grant from Clemson University! I am looking forward to defending my dissertation later this year.",
+              text: `I have been selected for <a href="https://www.clemson.edu/research/division-of-research/resources/r-init-sub-pages/doctoral-dissertation-grant.html" target="_blank" style="color:#F56600;">Doctoral Dissertation Completion Grant</a> from Clemson University! I am looking forward to defending my dissertation later this year.`,
             },
             {
               date: "2024-04-30",
@@ -75,19 +85,19 @@ export default {
             },
             {
               date: "2023-07-15",
-              text: `Our paper, A Task-Parallel Approach for Localized Topological Data Structures, has been accepted to <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
+              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted to <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
             },
             {
               date: "2022-04-28",
-              text: "Our paper, TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology, has been accepted to TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022. Congratulations to Xueyi, and thanks to all the reviewers!",
+              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted to <a href="" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
             },
             {
               date: "2022-01-26",
-              text: "I have successfully passed my portfolio review, an alternative version of the qualification exam, and will proceed to the dissertation phase of my doctoral study.",
+              text: `I have successfully passed my <a href="https://www.clemson.edu/cecas/departments/computing/academics/graduates/degrees/phd-cs.html#portfolioanddissertation" target="_blank">portfolio review</a>, which serves as the Comprehensive Examination in the School of Computing. I will proceed to the dissertation phase of my doctoral studies.`,
             },
             {
               date: "2022-01-05",
-              text: "Our memory-efficient topological data structure, TopoCluster, has been officially integrated in the Topology Toolkit. Please check out this page on how to invoke the CompactTriangulation class in TTK. Thanks to Dr. Julien Tierny and Dr. Pierre Guillou for their valuable help throughout the whole integration process.",
+              text: `Our memory-efficient topological data structure, TopoCluster, has been officially integrated into the <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>. Please check out <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">this example page</a> on how to invoke the CompactTriangulation class in TTK. Thanks to Dr. Julien Tierny and Dr. Pierre Guillou for their valuable help throughout the whole integration process.`,
             },
             {
               date: "2021-11-09",
@@ -95,11 +105,11 @@ export default {
             },
             {
               date: "2021-10-15",
-              text: "My first paper, TopoCluster: A Localized Data Structure for Topology-based Visualization, has been accepted for publication in IEEE Transactions on Visualization and Computer Graphics (TVCG). Thanks to all the collaborators and reviewers for their valuable contributions and efforts."
+              text: `My first paper, "<a href="https://doi.org/10.1109/TVCG.2021.3121229" target="_blank">TopoCluster: A Localized Data Structure for Topology-based Visualization</a>", has been accepted for publication in <i>IEEE Transactions on Visualization and Computer Graphics (TVCG)</i>. Thanks to all the collaborators and reviewers for their valuable contributions and efforts.`
             },
             {
               date: "2021-07-16",
-              text: "Our project submitted to ICLR Computational Geometry & Topology Challenge 2021 has been included in the final summary white paper. For more details, please visit this link. Even though our project did not secure a top-three ranking, participating in this event was a highly enjoyable experience. Thanks to the organizers for providing such a creative and welcoming environment."
+              text: `Our project submitted to <a href="https://gt-rl.github.io/2021/challenge.html" target="_blank"><i>ICLR Computational Geometry & Topology Challenge 2021</i></a> has been included in the final summary white paper. For more details, please visit <a href="https://arxiv.org/abs/2108.09810" target="_blank">this link</a>. Even though our project did not secure a top-three ranking, participating in this event was a highly enjoyable experience. Thanks to the organizers for providing such a creative and welcoming environment.`
             },
             {
               date: "2018-08-25",
@@ -142,53 +152,72 @@ export default {
               { type: "img", src: require('@/assets/imgs/mizzou-logo.png'), alt: "密苏里大学校徽", color: "#F1B82E", text: "密苏里大学哥伦比亚分校（R1大学）", url: "https://missouri.edu/" },
               "数字生物实验室访学。"
             ],
+            [
+              "中文内容可能会比英文内容滞后或缺失，敬请谅解。",
+            ],
           ],
           newsLabel: "更新",
           news: [
             {
-              date: "2025-03-07",
-              text: "我已成功完成博士论文答辩，论文题目为“Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures”！特别感谢我的指导委员会以及在整个过程中支持我的每一位朋友。",
+              date: "2025-07-27",
+              text: `我们的论文 "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>" 已被 <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a> 录用。感谢所有评审在审稿过程中提出的宝贵意见。计划今年11月前往奥地利维也纳参会。`
             },
             {
-              date: "2024-10-08",
-              text: "我们提交至IEEE VIS 2024的IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)的论文荣获最佳论文奖。祝贺Yuehui！很荣幸能作为团队成员参与这项工作。",
+              date: "2025-03-07",
+              textBefore: `我已顺利完成博士论文答辩，论文题目为 <a href='https://open.clemson.edu/all_dissertations/3872/' target='_blank' style='color:#F56600'><i>Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures</i></a>。特别感谢我的导师委员会以及所有支持我的人 `,
+              linkText: "在整个旅程中的帮助",
+              img: require('@/assets/imgs/news/PhD-banquet.jpg'),
+              linkColor: "#F56600",
+              textAfter: "。",
+            },
+            {
+              date: "2024-10-15",
+              textBefore: `我们提交至 <i>IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)</i> 的论文在 <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 获得了 `,
+              linkText: "<strong>最佳论文奖<strong>",
+              img: require('@/assets/imgs/news/TopoInVis-2024-best-paper-award.jpg'),
+              linkColor: "#52B9F5",
+              textAfter: "。祝贺岳辉！很荣幸能参与团队并做出贡献。",
             },
             {
               date: "2024-07-15",
-              text: "我获得了克莱姆森大学博士论文完成奖学金！期待11月顺利答辩。",
+              text: `我获得了克莱姆森大学 <a href="https://www.clemson.edu/research/division-of-research/resources/r-init-sub-pages/doctoral-dissertation-grant.html" target="_blank" style="color:#F56600;">博士论文完成资助</a>！期待今年晚些时候完成答辩。`,
             },
             {
               date: "2024-04-30",
-              text: "我已顺利通过博士论文开题答辩！感谢我的论文委员会！",
-            },
-            {
-              date: "2024-06-01",
-              text: "在IEEE VIS 2024会议上展示了我们的最新论文。",
-            },
-            {
-              date: "2024-04-15",
-              text: "以博士后身份加入俄亥俄州立大学。",
-            },
-            {
-              date: "2023-12-10",
-              text: "在克莱姆森大学成功完成博士论文答辩。",
+              text: "顺利通过博士论文开题报告！感谢我的答辩委员会！",
             },
             {
               date: "2023-07-15",
-              text: "我们的论文《A Task-Parallel Approach for Localized Topological Data Structures》被IEEE VIS 2023录用。感谢所有评审在评审过程中提出的宝贵意见和反馈。10月墨尔本见！",
+              text: `我们的论文 "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>" 已被 <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 录用。感谢所有评审的意见和建议。10月墨尔本见！`,
             },
             {
               date: "2022-04-28",
-              text: "我们的论文《TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology》被SIAM国际数据挖掘大会（SDM 2022）TDA Workshop录用。祝贺Xueyi，也感谢所有评审！",
+              text: `我们的论文 <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a> 已被 <a href="" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a> 录用。祝贺雪怡，感谢所有评审！`,
             },
             {
               date: "2022-01-26",
-              text: "我已顺利通过博士资格考试（Portfolio Review），正式进入论文阶段。",
+              text: `顺利通过<a href="https://www.clemson.edu/cecas/departments/computing/academics/graduates/degrees/phd-cs.html#portfolioanddissertation" target="_blank">portfolio review</a>（博士资格考试），正式进入论文阶段。`,
             },
             {
               date: "2022-01-05",
-              text: "我们高效的拓扑数据结构TopoCluster已正式集成到Topology Toolkit (TTK) 中。欢迎访问TTK页面了解如何调用CompactTriangulation类。感谢Dr. Julien Tierny和Dr. Pierre Guillou在整个集成过程中的宝贵帮助。",
+              text: `我们提出的高效拓扑数据结构 TopoCluster 已正式集成进 <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>。更多用法请见 <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">此示例页面</a>。感谢 Dr. Julien Tierny 和 Dr. Pierre Guillou 的大力帮助。`,
             },
+            {
+              date: "2021-11-09",
+              text: `我的 TVCG 论文被安排在 <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 会议上报告。感谢沈汉威老师的推荐，明年俄克拉荷马城见！`
+            },
+            {
+              date: "2021-10-15",
+              text: `我的第一篇论文 "<a href="https://doi.org/10.1109/TVCG.2021.3121229" target="_blank">TopoCluster: A Localized Data Structure for Topology-based Visualization</a>" 已被 <i>IEEE Transactions on Visualization and Computer Graphics (TVCG)</i> 录用。感谢所有合作者和评审的贡献与努力。`
+            },
+            {
+              date: "2021-07-16",
+              text: `我们<a href="https://gt-rl.github.io/2021/challenge.html" target="_blank"><i>ICLR Computational Geometry & Topology Challenge 2021</i></a>提交的项目被收录进最终成稿白皮书。详情请见<a href="https://arxiv.org/abs/2108.09810" target="_blank">此链接</a>。虽然未获前三名，但参与过程非常有趣，感谢主办方提供了如此有创意和包容的环境。`
+            },
+            {
+              date: "2018-08-25",
+              text: "我即将开始在克莱姆森大学攻读博士学位！"
+            }
           ]
         }
       },
@@ -219,6 +248,11 @@ export default {
   methods: {
     revealEmail() { this.showEmail = true; },
     hideEmail() { this.showEmail = false; },
+    openOverlay(imgPath) { 
+      this.overlayImgSrc = imgPath; 
+      this.showOverlay = true; 
+    },
+    closeOverlay() { this.showOverlay = false; },
   },
 };
 </script>
@@ -354,14 +388,44 @@ export default {
                 <tr v-for="(item, index) in lang.news" :key="`news-${index}`">
                   <td class="align-middle text-center">{{ item.date }}</td>
                   <td class="align-middle">
-                    <span v-html="item.text"></span>
+                    <span v-if="item.img">
+                      <span v-html="item.textBefore"></span>
+                      <a
+                        href="#"
+                        @click.prevent="openOverlay(item.img)"
+                        :style="{ color: item.linkColor || 'inherit', textDecoration: 'underline', cursor: 'pointer' }"
+                      >
+                        <span v-html="item.linkText"></span>
+                      </a>
+                      <span v-html="item.textAfter"></span>
+                    </span>
+                    <span v-else v-html="item.text"></span>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          Test overlay
+          <div
+            v-if="showOverlay"
+            class="overlay-backdrop"
+            @click.self="closeOverlay"
+          >
+            <div class="overlay-modal-content">
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                @click="closeOverlay"
+                style="position:absolute;top:10px;right:10px;z-index:2;"
+              ></button>
+              <img
+                :src="overlayImgSrc"
+                alt="Overlay Image"
+                class="overlay-img"
+              />
+            </div>
+          </div>
 
           <!-- <div class="card-header mt-3">
             <h2>
