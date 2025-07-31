@@ -82,119 +82,158 @@ body {
   vertical-align: bottom;
 }
 
-/* Publication figure styles */
+/* Publications specific styles */
 .publication-figure {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid #e0e0e0;
 }
-
 .publication-figure:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
 }
 
-/* Publication layout styles */
-.table-cv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
+.publication-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
-/* BibTeX modal styles */
-.overlay-modal-content pre {
-  font-family: 'Courier New', Courier, monospace;
-  margin: 0;
-  background-color: #f8f9fa !important;
+.modal-dialog {
+  max-width: 90vw;
 }
 
-.overlay-modal-content pre code {
-  color: #495057;
+.modal-content img {
+  max-width: 100%;
+  height: auto;
 }
 
-.publications .list-group-item {
-  padding: 1.25rem 1rem;
-  border-left: none;
-  border-right: none;
+.date-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #bbdefb;
 }
 
-.publications .list-group-item:first-child {
-  border-top: none;
-}
-
-.publications .list-group-item:last-child {
-  border-bottom: none;
-}
-
-.publications h6.title {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.publications h6.title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.publications h6.title a:hover {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.publications .badge {
-  font-size: 0.7rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.publications a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.publications a:hover {
-  text-decoration: underline;
-}
-
-/* Abstract toggle button styles */
-.publications .btn-link {
-  border: none;
-  padding: 0;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.publications .btn-link:hover {
-  text-decoration: underline !important;
-  color: #0056b3 !important;
-}
-
-.publications .btn-link:focus {
-  box-shadow: none;
-}
-
+/* Modal overlay styles */
 .overlay-backdrop {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-.overlay-modal-content {
-  background: #fff;
-  padding: 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-  position: relative;
-}
-.overlay-img {
-  max-width: 100%;
-  max-height: 80vh;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  backdrop-filter: blur(2px);
+}
+
+.overlay-modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Toast notification styles */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  animation: slideInRight 0.3s ease-out, slideOutRight 0.3s ease-in 1.7s forwards;
+}
+
+.toast-notification i {
+  font-size: 16px;
+}
+
+/* Inline toast notification for modal */
+.toast-notification-inline {
+  background: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: fadeInUp 0.3s ease-out, fadeOutDown 0.3s ease-in 1.7s forwards;
+}
+
+.toast-notification-inline i {
+  font-size: 14px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }

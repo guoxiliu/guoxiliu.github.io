@@ -7,12 +7,12 @@ export default {
     return {
       languageContent: {
         en: {
-          title: 'My World Trajectory',
+            title: 'My Journey Map 🌍',
           description: 'Places where I have lived, stayed, and visited.',
         },
         zh: {
-          title: '我的世界轨迹',
-          description: '那些我曾栖息、流连与踏足的时光与土地。',
+          title: '我的旅程地图 🌍',
+          description: '那些我曾栖息、流连与踏足的时光和土地。',
         },
       },
     }

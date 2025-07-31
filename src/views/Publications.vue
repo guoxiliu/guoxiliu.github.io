@@ -12,18 +12,57 @@ export default {
       expandedAbstracts: new Set(), // track which abstracts are expanded
       loading: true,
       error: null,
+      // Copy notification state
+      showCopyNotification: false,
+      copyNotificationText: '',
       languageContent: {
         en: {
           title: 'Publications',
-          description: 'Here you can find a list of my publications. Each entry (should) include links to papers, slides, code, and supplementary materials and videos if available.',
+          description: 'Here you can find a list of my publications. Each entry includes links to papers, supplementary materials, code, slides, and videos where applicable.',
           loading: 'Loading publications...',
           error: 'Error loading publications. Please try again later.',
+          doiLabel: 'DOI',
+          codeLabel: 'Code',
+          suppLabel: 'Supp',
+          arxivLabel: 'arXiv',
+          htmlLabel: 'HTML',
+          videoLabel: 'Video',
+          slidesLabel: 'Slides',
+          bibtexLabel: 'BibTeX',
+          pubTypes: {
+            'Conference': 'Conference',
+            'Journal': 'Journal',
+            'Workshop': 'Workshop',
+            'Book Chapter': 'Book Chapter',
+            'Book': 'Book',
+            'Thesis': 'Thesis',
+            'Preprint': 'Preprint',
+            'Technical Report': 'Technical Report',
+          },
         },
         zh: {
           title: '学术成果',
-          description: '此处展示我现有的学术成果，每条记录应包含（如果适用的话）：论文链接、报告幻灯片、程序代码、补充材料和演示视频。',
+          description: '此处展示我的学术成果，每条记录包含论文链接、补充材料、演示幻灯片、程序代码和演示视频等相关资源（如适用）。',
           loading: '正在加载学术成果...',
           error: '加载学术成果时出错，请稍后重试。',
+          doiLabel: 'DOI链接',
+          codeLabel: '源代码',
+          suppLabel: '补充材料',
+          arxivLabel: '预印本',
+          htmlLabel: '网页链接',
+          videoLabel: '视频',
+          slidesLabel: '演示文稿',
+          bibtexLabel: 'BibTeX引用',
+          pubTypes: {
+            'Conference': '会议论文',
+            'Journal': '期刊论文',
+            'Workshop': '研讨会论文',
+            'Book Chapter': '书籍章节',
+            'Book': '专著',
+            'Thesis': '学位论文',
+            'Preprint': '预印本',
+            'Technical Report': '技术报告',
+          },
         },
       },
     }
@@ -92,9 +131,9 @@ export default {
       
       // Standard field order for BibTeX
       const fieldOrder = [
-        'author', 'title', 'journal', 'booktitle', 'year', 'month', 
+        'title', 'author', 'journal', 'booktitle', 'year', 'month', 
         'volume', 'number', 'pages', 'publisher', 'organization', 
-        'address', 'doi', 'ISSN', 'ISBN', 'abstract', 'arxiv'
+        'address', 'doi', 'ISSN', 'ISBN',
       ];
       
       fieldOrder.forEach(field => {
@@ -111,7 +150,6 @@ export default {
             value = monthMap[value] || value.toLowerCase();
             bibtex += `  ${field} = ${value},\n`;
           } else {
-            // Wrap in braces for most fields
             bibtex += `  ${field} = {${value}},\n`;
           }
         }
@@ -126,23 +164,33 @@ export default {
     async copyToClipboard(text) {
       try {
         await navigator.clipboard.writeText(text);
-        // You could add a toast notification here if desired
-        this.$bvToast && this.$bvToast.toast('Copied to clipboard!', {
-          title: 'Success',
-          variant: 'success',
-          solid: true,
-          autoHideDelay: 2000
-        });
+        this.showCopySuccess('Copied to clipboard!');
       } catch (err) {
         console.error('Failed to copy: ', err);
         // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
+        try {
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed';
+          textArea.style.opacity = '0';
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          this.showCopySuccess('Copied to clipboard!');
+        } catch (fallbackErr) {
+          this.showCopySuccess('Failed to copy. Please copy manually.');
+        }
       }
+    },
+    showCopySuccess(message) {
+      this.copyNotificationText = message;
+      this.showCopyNotification = true;
+      
+      // Auto-hide after 2 seconds
+      setTimeout(() => {
+        this.showCopyNotification = false;
+      }, 2000);
     },
     toggleAbstract(pubId) {
       if (this.expandedAbstracts.has(pubId)) {
@@ -225,13 +273,17 @@ export default {
       
       return animalEmojis[(parseInt(year) - 4) % 12];
     },
+    translatePubType(type) {
+      if (!type) return '';
+      return this.lang.pubTypes[type] || type;
+    },
   }
 }
 </script>
 
 <template>
-  <div class="container" style="max-width: 900px;">
-    <div class="publications">
+  <div class="container">
+    <div class="publications row-100 h-100">
       <h2>{{ lang.title }}</h2>
       <p>{{ lang.description }}</p>
       
@@ -257,16 +309,16 @@ export default {
       <div v-else-if="publications.length > 0" v-for="group in groupedPublications" :key="group.year" class="mb-4">
         <div class="card shadow-sm">
           <div class="card-header">
-            <h5 class="mb-0">
+            <h5 class="m-1">
               {{ group.year }} 
-              <span class="ms-2" style="font-size: 1.2em;">
+              <span class="ms-1" style="font-size: 1em;">
                 {{ getChineseZodiac(group.year) }}
               </span>
             </h5>
           </div>
           <ul class="list-group list-group-flush">
             <li v-for="pub in group.pubs" :key="pub.id" class="list-group-item">
-              <div class="row align-items-start">
+              <div class="row align-items-start mt-2">
                 <!-- Date Badge Column -->
                 <div class="col-xs-2 col-sm-2 col-md-2 text-center" style="width: 100px;">
                   <div class="table-cv">
@@ -310,36 +362,36 @@ export default {
                   </div>
 
                   <!-- Links -->
-                  <div class="ml-1 ml-md-2 mt-2">
+                  <div class="ml-1 ml-md-2 mb-2">
                     <small>
-                      <span class="badge bg-secondary me-1">{{ pub.type }}</span>
+                      <span class="badge bg-secondary me-1">{{ translatePubType(pub.type) }}</span>
                       
                       <a v-if="pub.doi" :href="'https://doi.org/' + pub.doi" target="_blank" class="me-2">
-                        <i class="fas fa-external-link-alt"></i> DOI
+                        <i class="fas fa-external-link-alt"></i> {{ lang.doiLabel }}
                       </a>
                       
                       <a v-if="pub.arxiv" :href="'https://arxiv.org/abs/' + pub.arxiv" target="_blank" class="me-2">
-                        <img src='../assets/pubs/arxiv-logomark-small-white.svg' alt="arXiv" style="width: 12px; height: 12px; vertical-align: baseline; filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);"> arXiv
+                        <img src='../assets/pubs/arxiv-logomark-small-white.svg' alt="arXiv" style="width: 12px; height: 12px; vertical-align: baseline; filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);"> {{ lang.arxivLabel}}
                       </a>
                       
                       <a v-if="pub.code" :href="pub.code" target="_blank" class="me-2">
-                        <i class="fab fa-github"></i> Code
+                        <i class="fab fa-github"></i> {{ lang.codeLabel }}
                       </a>
                       
                       <a v-if="pub.supp" :href="pub.supp" target="_blank" class="me-2">
-                        <i class="fas fa-database"></i> Supp
+                        <i class="fas fa-database"></i> {{ lang.suppLabel }}
                       </a>
                       
                       <a v-if="pub.html && pub.html !== pub.url" :href="pub.html" target="_blank" class="me-2">
-                        <i class="fas fa-globe"></i> HTML
+                        <i class="fas fa-globe"></i> {{ lang.htmlLabel }}
                       </a>
                       
                       <a v-if="pub.video" :href="pub.video" target="_blank" class="me-2">
-                        <i class="fas fa-video"></i> Video
+                        <i class="fas fa-video"></i> {{ lang.videoLabel }}
                       </a>
                       
                       <button @click="showBibtexModal(pub)" class="btn btn-sm btn-outline-secondary me-2" style="font-size: 0.75rem; padding: 0.1rem 0.3rem;">
-                        <i class="fas fa-quote-left"></i> BibTeX
+                        <i class="fas fa-quote-left"></i> {{ lang.bibtexLabel }}
                       </button>
                     </small>
                   </div>
@@ -378,26 +430,32 @@ export default {
         ></button>
         
         <!-- BibTeX Modal Content -->
-        <div class="p-4" style="max-width: 700px; max-height: 80vh; overflow-y: auto;">
+        <div class="p-4" style="max-width: 750px; max-height: 80vh; overflow-y: auto;">
           <h5 class="mb-3">
             <i class="fas fa-quote-left me-2"></i>
             BibTeX Citation
-          </h5>
-          <div class="position-relative">
-            <pre class="bg-light p-3 rounded border" style="font-size: 0.85rem; line-height: 1.4; white-space: pre-wrap; word-wrap: break-word;"><code>{{ modalBibtex }}</code></pre>
             <button 
               @click="copyToClipboard(modalBibtex)"
-              class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+              class="btn btn-sm btn-outline-secondary ms-2"
               title="Copy to clipboard"
             >
               <i class="fas fa-copy"></i>
             </button>
+          </h5>
+          <div>
+            <pre class="bg-light p-3 rounded border" style="font-size: 0.9rem; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word;"><code>{{ modalBibtex }}</code></pre>
           </div>
-          <div class="mt-3 text-center">
-            <small class="text-muted">
-              <i class="fas fa-info-circle"></i>
-              Click the copy button to copy this citation to your clipboard
-            </small>
+          <div class="mt-2 text-center">
+            <div>
+              <small class="text-muted">
+                <i class="fas fa-info-circle"></i>
+                Click the copy button to copy this citation to your clipboard
+              </small>
+            </div>
+            <div v-if="showCopyNotification" class="toast-notification-inline mt-2">
+              <i class="fas fa-check-circle"></i>
+              {{ copyNotificationText }}
+            </div>
           </div>
         </div>
       </div>

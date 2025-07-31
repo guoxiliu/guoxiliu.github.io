@@ -13,7 +13,7 @@ export default {
           brand: 'Guoxi <strong>LIU</strong>',
           home: 'Home',
           publications: 'Publications',
-          trajectory: 'Trajectory',
+          trajectory: 'Journey',
           switchLanguage: 'Languages',
           footer: `This website is built with 
             <a href="https://getbootstrap.com/" target="_blank">
@@ -31,7 +31,7 @@ export default {
           brand: '<strong>刘</strong>国玺',
           home: '主页',
           publications: '学术成果',
-          trajectory: '行踪轨迹',
+          trajectory: '足迹天下',
           switchLanguage: '切换语言',
           footer: `本网站基于 
             <a href="https://getbootstrap.com/" target="_blank">
@@ -111,7 +111,7 @@ export default {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <transition name="zoom-fade" mode="out-in">
             <ul class="navbar-nav ms-auto" :key="language">
               <li class="nav-item">

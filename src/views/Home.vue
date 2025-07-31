@@ -57,7 +57,7 @@ export default {
           news: [
             {
               date: "July 27, 2025",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted to <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
+              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted at <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
             },
             {
               date: "March 7, 2025",
@@ -85,11 +85,11 @@ export default {
             },
             {
               date: "July 15, 2023",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted to <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
+              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted at <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
             },
             {
               date: "April 28, 2022",
-              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted to <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
+              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted at <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
             },
             {
               date: "January 26, 2022",
@@ -425,11 +425,12 @@ export default {
                 @click="closeOverlay"
                 style="position:absolute;top:10px;right:10px;z-index:2;"
               ></button>
-              <img
+                <img
                 :src="overlayImgSrc"
                 alt="Overlay Image"
                 class="overlay-img"
-              />
+                style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block; margin: 0 auto;"
+                />
             </div>
           </div>
 
