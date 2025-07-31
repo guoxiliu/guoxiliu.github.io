@@ -57,21 +57,21 @@ export default {
           news: [
             {
               date: "July 27, 2025",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted to <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
+              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted to <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
             },
             {
               date: "March 7, 2025",
               textBefore: "I have successfully defended my Ph.D. dissertation, <a href='https://open.clemson.edu/all_dissertations/3872/' target='_blank' style='color:#F56600'><i>Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures</i></a>. Special thanks to my advisory committee and everyone who has supported me ",
               linkText: "throughout this journey",
-              img: require('@/assets/imgs/news/PhD-banquet.jpg'),
+              img: require('@/assets/news/PhD-banquet.jpg'),
               linkColor: "#F56600",
               textAfter: ".",
             },
             {
               date: "October 15, 2024",
-              textBefore: `Our paper submitted to <i>IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)</i> at <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> has been selected for the `,
+              textBefore: `Our paper submitted to <i>IEEE Workshop on Topological Data Analysis and Visualization (TopoInVis)</i> at <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> has been selected for the `,
               linkText: "<strong>Best Paper Award<strong>",
-              img: require('@/assets/imgs/news/TopoInVis-2024-best-paper-award.jpg'),
+              img: require('@/assets/news/TopoInVis-2024-best-paper-award.jpg'),
               linkColor: "#52B9F5",
               textAfter: ". Congratulations to Yuehui! I feel very honored to be part of the team and contribute to the work.",
             },
@@ -85,7 +85,7 @@ export default {
             },
             {
               date: "July 15, 2023",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted to <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
+              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted to <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
             },
             {
               date: "April 28, 2022",
@@ -101,7 +101,7 @@ export default {
             },
             {
               date: "November 9, 2021",
-              text: `I have been allocated a slot to present my TVCG paper at <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to Dr. Han-Wei Shen for providing me with such great opportunity. See you in Oklahoma City next year!`
+              text: `I have been allocated a slot to present my TVCG paper at <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to Dr. Han-Wei Shen for providing me with such great opportunity. See you in Oklahoma City next year!`
             },
             {
               date: "October 15, 2021",
@@ -152,29 +152,29 @@ export default {
               { type: "img", src: require('@/assets/imgs/mizzou-logo.png'), alt: "密苏里大学校徽", color: "#F1B82E", text: "密苏里大学哥伦比亚分校（R1大学）", url: "https://missouri.edu/" },
               "数字生物实验室访学。"
             ],
-            [
-              "中文内容可能更新较慢或部分内容缺失，敬请谅解。",
-            ],
+            // [
+            //   "中文内容可能更新较慢或部分内容缺失，敬请谅解。",
+            // ],
           ],
           newsLabel: "更新",
           news: [
             {
               date: "2025年07月27日",
-              text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>"《GALE：利用异构系统实现对不规则网格的高效数据分析》已被 <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a> 录用。感谢所有审稿人在评审过程中提出的宝贵修改意见！我计划今年11月前往奥地利维也纳参会。`
+              text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>"《GALE：利用异构系统实现对不规则网格的高效数据分析》已被 <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a> 录用。感谢所有审稿人在评审过程中提出的宝贵修改意见！我计划今年11月前往奥地利维也纳参会。`
             },
             {
               date: "2025年03月07日",
               textBefore: `我已顺利完成博士毕业论文答辩，论文题目为 <a href='https://open.clemson.edu/all_dissertations/3872/' target='_blank' style='color:#F56600'><i>Advancing Efficiency of Unstructured Mesh Processing With Localized Data Structures</i></a>《利用局部性数据结构提升对不规则网格的处理效率》。特别感谢我的博士论文委员会以及所有在我`,
               linkText: "博士求学生涯中",
-              img: require('@/assets/imgs/news/PhD-banquet.jpg'),
+              img: require('@/assets/news/PhD-banquet.jpg'),
               linkColor: "#F56600",
               textAfter: "提供帮助的同学和朋友们！<em>路漫漫其修远兮，吾将上下而求索。</em>",
             },
             {
               date: "2024年10月15日",
-                textBefore: `我以第二作者身份完成的论文在 <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 举办的<i>IEEE Workshop on Topological Data Analysis and Visualization（TopoInVis，拓扑数据分析与可视化研讨会）</i>获得了`,
+                textBefore: `我以第二作者身份完成的论文在 <a href="https://ieeevis.org/year/2024/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2024-logo.png')}" alt="IEEE VIS 2024 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 举办的<i>IEEE Workshop on Topological Data Analysis and Visualization（TopoInVis，拓扑数据分析与可视化研讨会）</i>获得了`,
               linkText: "<strong>最佳论文奖<strong>",
-              img: require('@/assets/imgs/news/TopoInVis-2024-best-paper-award.jpg'),
+              img: require('@/assets/news/TopoInVis-2024-best-paper-award.jpg'),
               linkColor: "#52B9F5",
               textAfter: "。祝贺跃辉！同时我也感到非常荣幸能参与这个工作。",
             },
@@ -188,7 +188,7 @@ export default {
             },
             {
               date: "2023年07月15日",
-              text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>" 已被 <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 录用。感谢所有审稿人在评审过程中提出的宝贵修改意见。今年10月澳大利亚墨尔本见！`,
+              text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>" 已被 <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 录用。感谢所有审稿人在评审过程中提出的宝贵修改意见。今年10月澳大利亚墨尔本见！`,
             },
             {
               date: "2022年04月28日",
@@ -204,11 +204,11 @@ export default {
             },
             {
               date: "2021年11月09日",
-              text: `我之前发表于TVCG的论文被安排在 <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/imgs/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 会议上报告。特别感谢主编沈教授的推荐，明年俄克拉荷马城见！`
+              text: `我之前发表于TVCG的论文被安排在 <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 会议上报告。特别感谢主编沈教授的推荐，明年俄克拉荷马城见！`
             },
             {
               date: "2021年10月15日",
-              text: `我的第一篇论文 "<a href="https://doi.org/10.1109/TVCG.2021.3121229" target="_blank">TopoCluster: A Localized Data Structure for Topology-based Visualization</a>"《TopoCluster：面向拓扑可视化的局部性数据结构》已被 <i>IEEE Transactions on Visualization and Computer Graphics (TVCG)</i> 录用。感谢所有合作者和审稿人的贡献与努力。`
+              text: `我的第一篇一作论文 "<a href="https://doi.org/10.1109/TVCG.2021.3121229" target="_blank">TopoCluster: A Localized Data Structure for Topology-based Visualization</a>"《TopoCluster：面向拓扑可视化的局部性数据结构》已被 <i>IEEE Transactions on Visualization and Computer Graphics (TVCG)</i> 录用。感谢所有合作者和审稿人的贡献与努力。`
             },
             {
               date: "2021年07月16日",
@@ -216,7 +216,7 @@ export default {
             },
             {
               date: "2018年08月25日",
-              text: "我即将开始在克莱姆森大学的博士求学之旅！"
+              text: "我即将开始在克莱姆森大学攻读博士学位！"
             }
           ]
         }

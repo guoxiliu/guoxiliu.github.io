@@ -30,7 +30,7 @@ export default {
         zh: {
           brand: '<strong>刘</strong>国玺',
           home: '主页',
-          publications: '出版物',
+          publications: '学术成果',
           trajectory: '行踪轨迹',
           switchLanguage: '切换语言',
           footer: `本网站基于 

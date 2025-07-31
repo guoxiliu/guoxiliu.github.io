@@ -82,6 +82,98 @@ body {
   vertical-align: bottom;
 }
 
+/* Publication figure styles */
+.publication-figure {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.publication-figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+/* Publication layout styles */
+.table-cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* BibTeX modal styles */
+.overlay-modal-content pre {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  background-color: #f8f9fa !important;
+}
+
+.overlay-modal-content pre code {
+  color: #495057;
+}
+
+.publications .list-group-item {
+  padding: 1.25rem 1rem;
+  border-left: none;
+  border-right: none;
+}
+
+.publications .list-group-item:first-child {
+  border-top: none;
+}
+
+.publications .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.publications h6.title {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.publications h6.title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.publications h6.title a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.publications .badge {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.publications a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.publications a:hover {
+  text-decoration: underline;
+}
+
+/* Abstract toggle button styles */
+.publications .btn-link {
+  border: none;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.publications .btn-link:hover {
+  text-decoration: underline !important;
+  color: #0056b3 !important;
+}
+
+.publications .btn-link:focus {
+  box-shadow: none;
+}
+
 .overlay-backdrop {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
