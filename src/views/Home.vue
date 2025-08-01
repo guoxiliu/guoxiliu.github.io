@@ -334,9 +334,10 @@ export default {
               </div>
             </div>
           </div>
-          <div class="text-center mt-2" style="color: #888;">
-            <p v-show="language === 'en'"><i class="fa fa-eye"></i> Website views: {{ viewerCount !== null ? viewerCount : '...' }}</p>
-            <p v-show="language === 'zh'"><i class="fa fa-eye"></i> 网站访问量: {{ viewerCount !== null ? viewerCount : '...' }}</p>
+          <div class="text-center mt-3 mb-2">
+            <a href="https://mapmyvisitors.com/web/1byqh" title="Map My Visitors" style="display:inline-block; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:10px; overflow:hidden; background:#fff; padding:10px;">
+              <img src="https://mapmyvisitors.com/map.png?cl=f5822f&w=312&t=tt&d=c1Aa0NlYq_4nd3vAMMpqm5eYGS2vsxlD2WtE0xHe9RI&co=ffffff&ct=000000" alt="Visitor Map" style="display:block; max-width:100%; height:auto; border-radius:8px;"/>
+            </a>
           </div>
         </div>
       </div>
