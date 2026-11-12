@@ -5,6 +5,9 @@ import { Counter } from 'counterapi';
 export default {
   name: 'Home',
   data() {
+    const daisyImg = require('@/assets/imgs/Daisy.jpg');
+    const bananaImg = require('@/assets/imgs/Banana.jpg');
+
     return {
       realEmailAddress: "liu.12722@osu.edu",
       protectedEmail: "[my protected email]",
@@ -33,11 +36,11 @@ export default {
               " at ",
               { type: "img", src: require('@/assets/imgs/osu-logo.png'), alt: "Ohio State University Logo", color: "#BA0C2F", text: "The Ohio State University", url: null },
               ", working with ",
-              { type: "a", url: "https://hguo.github.io/", color: "#BA0C2F", text: "Dr. Hanqi Guo" },
+              { type: "a", url: "https://hguo.github.io/", color: "#BA0C2F", text: "Prof. Hanqi Guo" },
               ". Before joining OSU, I obtained my Ph.D. in Computer Science from ",
               { type: "img", src: require('@/assets/imgs/clemson-logo.png'), alt: "Clemson University Logo", color: "#F56600", text: "Clemson University", url: null },
               ", where I was advised by ",
-              { type: "a", url: "https://fiurici.people.clemson.edu/", color: "#F56600", text: "Dr. Federico Iuricich" },
+              { type: "a", url: "https://fiurici.people.clemson.edu/", color: "#F56600", text: "Prof. Federico Iuricich" },
               ". My research interests include scientific visualization, topological data analysis, parallel computation, and data compression."
             ],
             [
@@ -51,13 +54,40 @@ export default {
             ],
             [
               "BTW, my name can be pronounced as “Gwoh-shee Lee-oo” :)"
-            ]
+            ],
+            [
+              "Outside of research, I have two pets: a ",
+              { type: "span", fontSize: "1.2em", fontWeight: "600", text: "big dog" },
+              " named ",
+              { type: "span", color: "#FF0000", text: "Daisy" },
+              " and a ",
+              { type: "span", fontSize: "0.85em", text: "small cat" },
+              " named ",
+              { type: "span", color: "#F54927", text: "Banana" },
+              ". They were both adopted from local shelters."
+            ],
+          ],
+          pets: [
+            { name: "Daisy", alt: "Daisy the dog", img: daisyImg },
+            { name: "Banana", alt: "Banana the cat", img: bananaImg }
           ],
           newsLabel: "News",
           news: [
             {
+              date: "July 25, 2026",
+              text: `Our paper, "<a href="https://arxiv.org/abs/2608.08386" target="_blank" style="color:#BC4A73;">FZ-VIS: A Visual Analytics Framework for Quantities-of-Interest-Aware Scientific Lossy Compression</a>", has been accepted by <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a>. Check out the <a href="https://go.osu.edu/fzvis" target="_blank" style="color:#BC4A73;" title="Passcode: osu">live demo</a> (hover 3 seconds for passcode hint). Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Boston, USA this November.`
+            },
+            {
+              date: "July 25, 2026",
+              text: `Our paper, "<a href="https://arxiv.org/abs/2603.29139" target="_blank" style="color:#BC4A73;">SciVisAgentBench: A Benchmark for Evaluating Scientific Data Analysis and Visualization Agents</a>", has been accepted by <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a>. Congratulations to Kuangshi Ai! I feel very honored to have contributed to the work.`
+            },
+            {
+              date: "July 17, 2026",
+              text: `Our short paper, "<a href="https://data.tech.ieeevis.org/storage/v1/object/sign/vis2026/pdf-files/v-short/1363-doc.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aXMyMDI2L3BkZi1maWxlcy92LXNob3J0LzEzNjMtZG9jLnBkZiIsImlhdCI6MTc5MTI3NzY3MSwiZXhwIjoxODIyODEzNjcxfQ.SDva46xu7yd61yTlVH98rt2Yg8Clg15UcaYzsAojr9k" target="_blank" style="color:#BC4A73;">Subdivision Matters: Partitioning Strategies for Task-Parallel Topological Visualization</a>", has been accepted by <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a>. Congratulations to Mithilesh Biradar! I feel very honored to have contributed to the work.`
+            },
+            {
               date: "July 27, 2025",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted at <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
+              text: `Our paper, "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>", has been accepted by <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a>. Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Vienna, Austria this November.`
             },
             {
               date: "March 7, 2025",
@@ -73,7 +103,7 @@ export default {
               linkText: "<strong>Best Paper Award<strong>",
               img: require('@/assets/news/TopoInVis-2024-best-paper-award.jpg'),
               linkColor: "#52B9F5",
-              textAfter: ". Congratulations to Yuehui! I feel very honored to be part of the team and contribute to the work.",
+              textAfter: ". Congratulations to Yuehui! I feel very honored to be part of the team and have contributed to the work.",
             },
             {
               date: "July 15, 2024",
@@ -85,11 +115,11 @@ export default {
             },
             {
               date: "July 15, 2023",
-              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted at <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
+              text: `Our paper, "<a href="https://arxiv.org/abs/2308.15638" target="_blank" style="color:#38381D;">A Task-Parallel Approach for Localized Topological Data Structures</a>", has been accepted by <a href="https://ieeevis.org/year/2023/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2023-logo.svg')}" alt="IEEE VIS 2023 Logo" style="height:1.4em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to all the reviewers for their thoughtful comments and feedback during the review process. See you in Melbourne, Australia this October!`,
             },
             {
               date: "April 28, 2022",
-              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted at <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
+              text: `Our paper, <a href="https://arxiv.org/abs/2204.09783" target="_blank">"TopoEmbedding, A Web Tool for the Interactive Analysis of Persistent Homology"</a>, has been accepted by <a href="https://meetings.siam.org/program.cfm?CONFCODE=SDM22" target="_blank"><i>TDA Workshop at SIAM International Conference on Data Mining (SDM) 2022</i></a>. Congratulations to Xueyi, and thanks to all the reviewers!`,
             },
             {
               date: "January 26, 2022",
@@ -152,12 +182,39 @@ export default {
               { type: "img", src: require('@/assets/imgs/mizzou-logo.png'), alt: "密苏里大学校徽", color: "#F1B82E", text: "密苏里大学哥伦比亚分校（R1大学）", url: "https://missouri.edu/" },
               "数字生物实验室访学。"
             ],
+            [
+              "在科研之外，我还养了两只宠物：一只名叫",
+              { type: "span", color: "pink", text: "黛西" },
+              "的",
+              { type: "span", fontSize: "1.2em", fontWeight: "600", text: "大狗" },
+              "和一只名叫",
+              { type: "span", color: "orange", text: "香蕉" },
+              "的",
+              { type: "span", fontSize: "0.85em", text: "小猫" },
+              "。"
+            ],
             // [
             //   "中文内容可能更新较慢或部分内容缺失，敬请谅解。",
             // ],
           ],
+          pets: [
+            { name: "黛西", alt: "大狗 黛西", img: daisyImg },
+            { name: "香蕉", alt: "小猫 香蕉", img: bananaImg }
+          ],
           newsLabel: "更新",
           news: [
+            {
+              date: "2026年07月25日",
+              text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2608.08386" target="_blank" style="color:#BC4A73;">FZ-VIS: A Visual Analytics Framework for Quantities-of-Interest-Aware Scientific Lossy Compression</a>"（FZ-VIS：面向感兴趣的量的科学数据有损压缩可视化分析框架）已被 <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 录用。欢迎体验<a href="https://go.osu.edu/fzvis" target="_blank" style="color:#BC4A73;" title="Passcode: osu">在线演示</a>（鼠标悬停3秒查看访问密码提示）。感谢所有审稿人在评审过程中提出的宝贵修改意见！我计划今年11月前往美国波士顿参会。`
+            },
+            {
+              date: "2026年07月25日",
+              text: `我参与合作的论文 "<a href="https://arxiv.org/abs/2603.29139" target="_blank" style="color:#BC4A73;">SciVisAgentBench: A Benchmark for Evaluating Scientific Data Analysis and Visualization Agents</a>"（SciVisAgentBench：用于评估科学数据分析与可视化智能体的基准测试）已被 <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 录用。祝贺 Kuangshi Ai！我也感到非常荣幸能参与这项工作。`
+            },
+            {
+              date: "2026年07月17日",
+              text: `我参与合作的短篇论文 "<a href="https://data.tech.ieeevis.org/storage/v1/object/sign/vis2026/pdf-files/v-short/1363-doc.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aXMyMDI2L3BkZi1maWxlcy92LXNob3J0LzEzNjMtZG9jLnBkZiIsImlhdCI6MTc5MTI3NzY3MSwiZXhwIjoxODIyODEzNjcxfQ.SDva46xu7yd61yTlVH98rt2Yg8Clg15UcaYzsAojr9k" target="_blank" style="color:#BC4A73;">Subdivision Matters: Partitioning Strategies for Task-Parallel Topological Visualization</a>"（划分的重要性：面向任务并行拓扑可视化的分区策略）已被 <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 录用。祝贺 Mithilesh Biradar！我也感到非常荣幸能参与这项工作。`
+            },
             {
               date: "2025年07月27日",
               text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2507.15230" target="_blank" style="color:#DA171C;">GALE: Leveraging Heterogeneous Systems for Efficient Unstructured Mesh Data Analysis</a>"《GALE：利用异构系统实现对不规则网格的高效数据分析》已被 <a href="https://ieeevis.org/year/2025/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2025-logo.svg')}" alt="IEEE VIS 2025 Logo" style="height:1.65em;vertical-align:middle;margin-left:2px;" /></a> 录用。感谢所有审稿人在评审过程中提出的宝贵修改意见！我计划今年11月前往奥地利维也纳参会。`
@@ -204,7 +261,7 @@ export default {
             },
             {
               date: "2021年11月09日",
-              text: `我之前发表于TVCG的论文被安排在 <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 会议上报告。特别感谢主编沈教授的推荐，明年俄克拉荷马城见！`
+              text: `我之前发表于TVCG的论文被安排在 <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a> 会议上报告。特别感谢主编沈汉威教授的推荐，明年俄克拉荷马城见！`
             },
             {
               date: "2021年10月15日",
@@ -355,10 +412,13 @@ export default {
                     {{ part }}
                   </template>
                   <template v-else-if="part.type === 'span'">
-                    <span :style="{ color: part.color }">{{ part.text }}</span>
+                    <span :style="{ color: part.color, fontSize: part.fontSize, fontWeight: part.fontWeight }">{{ part.text }}</span>
                   </template>
                   <template v-else-if="part.type === 'a'">
                     <a :href="part.url" target="_blank" :style="{ color: part.color }">{{ part.text }}</a>
+                  </template>
+                  <template v-else-if="part.type === 'overlay'">
+                    <a href="#" @click.prevent="openOverlay(part.img)" :style="{ color: part.color || 'inherit', textDecoration: 'underline', cursor: 'pointer' }">{{ part.text }}</a>
                   </template>
                   <template v-else-if="part.type === 'img'">
                     <span :style="{ color: part.color, display: 'inline-flex' }">
@@ -373,6 +433,17 @@ export default {
                   </template>
                 </template>
               </p>
+            </div>
+            <div v-if="lang.pets && lang.pets.length" class="d-flex flex-wrap gap-3 mt-2 mb-2">
+              <div
+                v-for="(pet, idx) in lang.pets"
+                :key="`pet-${idx}`"
+                class="pet-card text-center"
+                @click="openOverlay(pet.img)"
+              >
+                <img :src="pet.img" :alt="pet.alt" class="pet-thumb" />
+                <div class="small text-muted mt-1">{{ pet.name }}</div>
+              </div>
             </div>
           </div>
 

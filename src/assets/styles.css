@@ -82,6 +82,22 @@ body {
   vertical-align: bottom;
 }
 
+.pet-card {
+  cursor: pointer;
+}
+.pet-thumb {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pet-card:hover .pet-thumb {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 /* Publications specific styles */
 .publication-figure {
   max-width: 100%;

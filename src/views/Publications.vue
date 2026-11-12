@@ -330,12 +330,16 @@ export default {
                 </div>
 
                 <!-- Publication Content Column -->
-                <div :class="pub.figure ? 'col-xs-7 col-sm-7 col-md-7' : 'col-xs-10 col-sm-10 col-md-10'">
-                  <h6 class="title font-weight-bold ml-1 ml-md-2">
+                <div :class="pub.figure ? 'col-xs-6 col-sm-6 col-md-6' : 'col-xs-10 col-sm-10 col-md-10'">
+                  <h6 :class="['title font-weight-bold ml-1 ml-md-2', { 'mb-1': pub.note }]">
                     <a :href="pub.url || pub.html" target="_blank" class="text-decoration-none">
                       {{ pub.title }}
                     </a>
                   </h6>
+
+                  <div v-if="pub.note" class="ml-1 ml-md-2 mb-2">
+                    <span class="badge bg-info text-dark">{{ pub.note }}</span>
+                  </div>
                   
                   <h6 class="ml-1 ml-md-2 text-muted" style="font-size: 1rem; font-style: italic;">
                     {{ pub.venue }}
@@ -398,12 +402,12 @@ export default {
                 </div>
 
                 <!-- Figure display -->
-                <div v-if="pub.figure" class="col-xs-3 col-sm-3 col-md-3 d-flex justify-content-center">
+                <div v-if="pub.figure" class="col-xs-4 col-sm-4 col-md-4 d-flex justify-content-center">
                   <img 
                     :src="require(`@/assets/pubs/${pub.figure}`)" 
                     :alt="pub.title + ' figure'"
                     class="rounded shadow-sm publication-figure"
-                    style="width: 100%; height: auto; max-height: 120px; object-fit: contain;"
+                    style="width: 100%; height: auto; max-height: 180px; object-fit: contain;"
                   >
                 </div>
               </div>
