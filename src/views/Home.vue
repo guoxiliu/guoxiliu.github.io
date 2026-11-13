@@ -37,6 +37,10 @@ export default {
               { type: "img", src: require('@/assets/imgs/osu-logo.png'), alt: "Ohio State University Logo", color: "#BA0C2F", text: "The Ohio State University", url: null },
               ", working with ",
               { type: "a", url: "https://hguo.github.io/", color: "#BA0C2F", text: "Prof. Hanqi Guo" },
+              ". I am also an ",
+              { type: "a", url: "https://hr.lbl.gov/service/appointments/affiliates/", color: "#00313C", text: "affiliate" },
+              " at ",
+              { type: "img", src: require('@/assets/imgs/lbl-logo.png'), alt: "Lawrence Berkeley National Laboratory Logo", color: "#00313C", text: "", url: "https://www.lbl.gov/", height: "34px" },
               ". Before joining OSU, I obtained my Ph.D. in Computer Science from ",
               { type: "img", src: require('@/assets/imgs/clemson-logo.png'), alt: "Clemson University Logo", color: "#F56600", text: "Clemson University", url: null },
               ", where I was advised by ",
@@ -57,13 +61,13 @@ export default {
             ],
             [
               "Outside of research, I have two pets: a ",
-              { type: "span", fontSize: "1.2em", fontWeight: "600", text: "big dog" },
+              { type: "span", color: "brown", fontSize: "1.2em", fontWeight: "600", text: "big dog" },
               " named ",
-              { type: "span", color: "#FF0000", text: "Daisy" },
+              { type: "span", color: "brown", text: "Daisy" },
               " and a ",
-              { type: "span", fontSize: "0.85em", text: "small cat" },
+              { type: "span", color: "#C2921A", fontSize: "0.85em", text: "small cat" },
               " named ",
-              { type: "span", color: "#F54927", text: "Banana" },
+              { type: "span", color: "#C2921A", text: "Banana" },
               ". They were both adopted from local shelters."
             ],
           ],
@@ -73,6 +77,10 @@ export default {
           ],
           newsLabel: "News",
           news: [
+            {
+              date: "October 23, 2026",
+              text: `Our <code class="inline-code">SZ3ImageDataReader</code> plugin has been integrated into the <a href="https://gitlab.kitware.com/paraview/paraview-superbuild" target="_blank"><img src="${require('@/assets/imgs/paraview-logo.png')}" alt="ParaView Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />ParaView-superbuild</a> repository as an external tool. Once the plugin is enabled in ParaView, users can directly load and visualize SZ3-compressed regular grid data by specifying its dimensions and data type. Thanks to Dr. Berk Geveci, Vicente Bolea, and Cory Quammen for their valuable help throughout <a href="https://gitlab.kitware.com/paraview/paraview-superbuild/-/merge_requests/1343" target="_blank">the integration process</a>.`,
+            },
             {
               date: "July 25, 2026",
               text: `Our paper, "<a href="https://arxiv.org/abs/2608.08386" target="_blank" style="color:#BC4A73;">FZ-VIS: A Visual Analytics Framework for Quantities-of-Interest-Aware Scientific Lossy Compression</a>", has been accepted by <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a>. Check out the <a href="https://go.osu.edu/fzvis" target="_blank" style="color:#BC4A73;" title="Passcode: osu">live demo</a> (hover 3 seconds for passcode hint). Thanks to all the reviewers for their valuable feedback during the review process. I plan to attend the conference in Boston, USA this November.`
@@ -127,11 +135,11 @@ export default {
             },
             {
               date: "January 5, 2022",
-              text: `Our memory-efficient topological data structure, TopoCluster, has been officially integrated into the <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>. Please check out <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">this example page</a> on how to invoke the CompactTriangulation class in TTK. Thanks to Dr. Julien Tierny and Dr. Pierre Guillou for their valuable help throughout the whole integration process.`,
+              text: `Our memory-efficient topological data structure, TopoCluster, has been officially integrated into the <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>. Please check out <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">this example page</a> on how to invoke the <code class="inline-code">CompactTriangulation</code> class in TTK. Thanks to Prof. Julien Tierny and Dr. Pierre Guillou for their valuable help throughout the integration process.`,
             },
             {
               date: "November 9, 2021",
-              text: `I have been allocated a slot to present my TVCG paper at <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to Dr. Han-Wei Shen for providing me with such great opportunity. See you in Oklahoma City next year!`
+              text: `I have been allocated a slot to present my TVCG paper at <a href="https://ieeevis.org/year/2022/welcome" target="_blank"><img src="${require('@/assets/news/VIS-2022-logo.svg')}" alt="IEEE VIS 2022 Logo" style="height:1.35em;vertical-align:middle;margin-left:2px;margin-right:2px;" /></a>. Thanks to Prof. Han-Wei Shen for providing me with such great opportunity. See you in Oklahoma City next year!`
             },
             {
               date: "October 15, 2021",
@@ -166,11 +174,15 @@ export default {
               { type: "img", src: require('@/assets/imgs/osu-logo.png'), alt: "Ohio State University Logo", color: "#BA0C2F", text: "美国俄亥俄州立大学（R1大学）", url: null },
               { type: "span", color: "#BA0C2F", text: "计算机科学与工程系" },
               "从事博士后研究，合作导师为",
-              { type: "a", url: "https://hguo.github.io/", color: "#BA0C2F", text: "郭翰琦博士" },
+              { type: "a", url: "https://hguo.github.io/", color: "#BA0C2F", text: "郭翰琦教授" },
+              "。同时我也是",
+              { type: "img", src: require('@/assets/imgs/lbl-logo.png'), alt: "Lawrence Berkeley National Laboratory Logo", color: "#00313C", text: "", url: "https://www.lbl.gov/", height: "34px" },
+              "（劳伦斯伯克利国家实验室）的",
+              { type: "a", url: "https://hr.lbl.gov/service/appointments/affiliates/", color: "#00313C", text: "合作研究人员" },
               "。在加入俄亥俄州立大学之前，我在",
               { type: "img", src: require('@/assets/imgs/clemson-logo.png'), alt: "Clemson University Logo", color: "#F56600", text: "克莱姆森大学（R1大学）", url: null },
               "获得计算机科学博士学位，导师为",
-              { type: "a", url: "https://fiurici.people.clemson.edu/", color: "#F56600", text: "Federico Iuricich博士" },
+              { type: "a", url: "https://fiurici.people.clemson.edu/", color: "#F56600", text: "Federico Iuricich教授" },
               "。我的研究方向包括数据可视化、拓扑数据分析、并行计算与数据压缩。"
             ],
             [
@@ -184,18 +196,15 @@ export default {
             ],
             [
               "在科研之外，我还养了两只宠物：一只名叫",
-              { type: "span", color: "pink", text: "黛西" },
+              { type: "span", color: "brown", text: "黛西" },
               "的",
-              { type: "span", fontSize: "1.2em", fontWeight: "600", text: "大狗" },
+              { type: "span", color: "brown", fontSize: "1.2em", fontWeight: "600", text: "大狗" },
               "和一只名叫",
-              { type: "span", color: "orange", text: "香蕉" },
+              { type: "span", color: "#C2921A", text: "香蕉" },
               "的",
-              { type: "span", fontSize: "0.85em", text: "小猫" },
+              { type: "span", color: "#C2921A", fontSize: "0.85em", text: "小猫" },
               "。"
             ],
-            // [
-            //   "中文内容可能更新较慢或部分内容缺失，敬请谅解。",
-            // ],
           ],
           pets: [
             { name: "黛西", alt: "大狗 黛西", img: daisyImg },
@@ -203,6 +212,10 @@ export default {
           ],
           newsLabel: "更新",
           news: [
+            {
+              date: "2026年10月23日",
+              text: `我们开发的 <code class="inline-code">SZ3ImageDataReader</code> 插件已作为外部工具正式集成进 <a href="https://gitlab.kitware.com/paraview/paraview-superbuild" target="_blank"><img src="${require('@/assets/imgs/paraview-logo.png')}" alt="ParaView Logo" style="height:1.4em;vertical-align:middle;margin-left:0px;margin-right:1px;" />ParaView-superbuild</a> 项目。在 ParaView 中启用该插件并指定数据维度和数据类型后，即可直接加载并可视化经 SZ3 压缩的规则网格数据。特别感谢 Berk Geveci 博士、Vicente Bolea 和 Cory Quammen 在整个<a href="https://gitlab.kitware.com/paraview/paraview-superbuild/-/merge_requests/1343" target="_blank">集成过程</a>中给予的宝贵帮助！`
+            },
             {
               date: "2026年07月25日",
               text: `我以第一作者身份完成的论文 "<a href="https://arxiv.org/abs/2608.08386" target="_blank" style="color:#BC4A73;">FZ-VIS: A Visual Analytics Framework for Quantities-of-Interest-Aware Scientific Lossy Compression</a>"（FZ-VIS：面向感兴趣的量的科学数据有损压缩可视化分析框架）已被 <a href="https://ieeevis.org/year/2026/welcome/" target="_blank"><img src="${require('@/assets/news/VIS-2026-logo.svg')}" alt="IEEE VIS 2026 Logo" style="height:1.5em;vertical-align:middle;margin-left:2px;" /></a> 录用。欢迎体验<a href="https://go.osu.edu/fzvis" target="_blank" style="color:#BC4A73;" title="Passcode: osu">在线演示</a>（鼠标悬停3秒查看访问密码提示）。感谢所有审稿人在评审过程中提出的宝贵修改意见！我计划今年11月前往美国波士顿参会。`
@@ -257,7 +270,7 @@ export default {
             },
             {
               date: "2022年01月05日",
-              text: `我们主导开发的高效拓扑数据结构 TopoCluster 已正式集成进 <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>（拓扑工具集），具体用法请见 <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">此示例页面</a>。特别感谢索邦大学的Julien Tierny博士和Pierre Guillou博士在整个过程中给予的宝贵帮助与支持。`,
+              text: `我们主导开发的高效拓扑数据结构 TopoCluster 已正式集成进 <a href="https://topology-tool-kit.github.io/" target="_blank"><img src="${require('@/assets/imgs/ttk-logo.png')}" alt="Topology Toolkit Logo" style="height:1.3em;vertical-align:middle;margin-left:2px;margin-right:2px;" />Topology Toolkit</a>（拓扑工具集），具体用法请见 <a href="https://topology-tool-kit.github.io/examples/compactTriangulation/" target="_blank">此示例页面</a>。特别感谢索邦大学的Julien Tierny教授和Pierre Guillou博士在整个过程中给予的宝贵帮助与支持。`,
             },
             {
               date: "2021年11月09日",
@@ -421,13 +434,14 @@ export default {
                     <a href="#" @click.prevent="openOverlay(part.img)" :style="{ color: part.color || 'inherit', textDecoration: 'underline', cursor: 'pointer' }">{{ part.text }}</a>
                   </template>
                   <template v-else-if="part.type === 'img'">
-                    <span :style="{ color: part.color, display: 'inline-flex' }">
-                      <img :src="part.src" :alt="part.alt" class="school-link-img" />
-                      <template v-if="part.url">
-                        <a :href="part.url" target="_blank" style="color: inherit;">{{ part.text }}</a>
-                      </template>
-                      <template v-else>
-                        {{ part.text }}
+                    <span :style="{ color: part.color, display: 'inline-flex', alignItems: 'center', verticalAlign: 'middle' }">
+                      <a v-if="part.url && !part.text" :href="part.url" target="_blank" style="display: inline-flex; align-items: center;">
+                        <img :src="part.src" :alt="part.alt" class="school-link-img" :style="part.height ? { height: part.height } : null" />
+                      </a>
+                      <img v-else :src="part.src" :alt="part.alt" class="school-link-img" :style="part.height ? { height: part.height } : null" />
+                      <template v-if="part.text">
+                        <a v-if="part.url" :href="part.url" target="_blank" style="color: inherit;">{{ part.text }}</a>
+                        <template v-else>{{ part.text }}</template>
                       </template>
                     </span>
                   </template>

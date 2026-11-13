@@ -52,6 +52,19 @@ personal-academic-website
 - Customize the `src/views/Home.vue` to include your introduction and achievements.
 - Add any static assets (images, fonts) to the `src/assets` directory.
 
+## Deployment (GitHub Pages)
+
+1. **Build and push to the `gh-pages` branch**:
+   ```bash
+   npm run deploy
+   ```
+   This runs `npm run build`, copies `dist/index.html` to `dist/404.html` (for Vue Router history mode fallback), and publishes `dist/` to `gh-pages`.
+
+2. **Optional custom commit message**:
+   ```bash
+   npm run deploy -- -m "Your commit message"
+   ```
+
 ## License
 
 This project is licensed under the MIT License.
